@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cal</title>
+    <style>
+        .container {
+            text-align: center;
+        }
+
+        table {
+            margin: auto;
+
+        }
+
+        input {
+            font-size: 20px;
+            background-color: aqua;
+            border-radius: 8px;
+
+        }
+
+        button {
+            font-size: 20px;
+            background-color: brown;
+            color: white;
+            width: 58px;
+        }
+
+        body {
+            background-color: chartreuse;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <h1>Calculater</h1>
+        <input type="text" placeholder="enter any number " id="input">
+        <table border="1">
+    </div>
+    <tr>
+        <td><button>(</button></td>
+        <td><button>)</button></td>
+        <td><button>C</button></td>
+        <td><button>%</button></td>
+    </tr>
+    <tr>
+        <td><button>9</button></td>
+        <td><button>8</button></td>
+        <td><button>7</button></td>
+        <td><button>+</button></td>
+    </tr>
+    <tr>
+        <td><button>6</button></td>
+        <td><button>5</button></td>
+        <td><button>4</button></td>
+        <td><button>-</button></td>
+    </tr>
+    <tr>
+        <td><button>3</button></td>
+        <td><button>2</button></td>
+        <td><button>1</button></td>
+        <td><button>/</button></td>
+    </tr>
+    <tr>
+        <td><button>0</button></td>
+        <td><button>.</button></td>
+        <td><button>=</button></td>
+        <td><button>*</button></td>
+        <td><button>X</button></td>
+
+    </tr>
+    </table>
+
+    <script>
+        let input = document.getElementById("input");
+        let button = document.getElementsByTagName("button")
+
+        for (let x = 0; x < button.length; x++) {
+            button[x].addEventListener('click', () => {
+                if (button[x].innerHTML == "=") {
+                    input.value = eval(input.value);
+                    return;
+                }
+                if (button[x].innerHTML == "C") {
+                    input.value = '';
+                    return;
+                }
+
+                input.value += button[x].innerHTML;
+            })
+        }
+    </script>
+</body>
+
+</html>
